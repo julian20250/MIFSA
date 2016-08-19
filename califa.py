@@ -19,6 +19,12 @@ import matplotlib.colorbar as cbar
 print("Importing Libraries... Done.")
 
 #warnings.filterwarnings('ignore')
+#Is necessary to make global variables to remember
+#which is the pixel selected to doing zoom
+global preserve_x
+preserve_x=0
+global preserve_y
+preserve_y=0
 
 def abs(x):
     if x>=0:
@@ -81,8 +87,11 @@ def showspectra(event):
             wav1,dat1=continuum.interpolate(wavelength,[data[cout][x][y] for cout in range(begin_wl,end_wl,step)])
             ax2.plot(wav1,dat1)
         print("Drew spectra of pixel (%i, %i)"%(x,y))
-        f.canvas.draw()
+        global preserve_x
+        global preserve_y
         preserve_x,preserve_y=x,y
+        f.canvas.draw()
+        
     except:
       x,y=event.xdata, event.ydata
       if (x!=None and y!=None):
