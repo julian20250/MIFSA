@@ -19,7 +19,7 @@ import matplotlib.colorbar as cbar
 print("Importing Libraries... Done.")
 
 #warnings.filterwarnings('ignore')
-#Is necessary to make global variables to remember
+#Is necessary to make global variables to remembe
 #which is the pixel selected to doing zoom
 global preserve_x
 preserve_x=0
@@ -78,6 +78,8 @@ def showspectra(event):
         x,y=int(event.xdata), int(event.ydata)
         ax2.set_xlabel(x_label_spectra)
         ax2.set_ylabel("Flux")
+        global wav1
+        global dat1
         if token==0:
             ax2.plot(wavelength, [data[cout][x][y] for cout in range(0,len(data),step)])
             wav1,dat1=continuum.interpolate(wavelength,[data[cout][x][y] for cout in range(0,len(data),step)])
@@ -100,7 +102,14 @@ def showspectra(event):
         ran=emergent_window(1)
         ax2.set_xlim(ran[0],ran[1])
         wally, biggy, endy =compare(wavelength,ran,1)
+        ytol=[abs(j-wally[0]) for j in wav1]
+        gbage=[abs(i-wally[-1]) for i in wav1]
+        refi=ytol.index(min(ytol))
+        salt=gbage.index(min(gbage))
+        print("Flux above continuum below spectra: %f"%(sum([data[cout][preserve_x][preserve_y] for cout in range(biggy,endy,1)])-sum(dat1[refi:salt])))
+        
         ax2.plot(wally, [data[cout][preserve_x][preserve_y] for cout in range(biggy,endy,1)])
+        ax2.plot(wav1,dat1)
         f.canvas.draw()
       else:
           pass
@@ -278,6 +287,7 @@ while True:
 
     #Showing the environment
     print("\nShowing Environment...")
+    print("Total flux  is %f"%sum(magnitude_black))
     plt.show()
     root=Tk()
     root.geometry("500x500")
