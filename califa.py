@@ -143,7 +143,7 @@ while True:
     print("Checking Parameters... Done.")
 
     #Steps of spectra
-    step=2
+    step=1
 
     #Opening File and Pointing
     print("\nOpening FITS file...")
@@ -209,7 +209,7 @@ while True:
     print("\nSetting Wavelength...")
     wavelength= []
     for x in range(int(lambda_begin), int(lambda_begin+lambda_step*len(data)), int(lambda_step)):
-        wavelength.append(x)
+        wavelength.append(x) #Put x/(1+0.015591)
     #Emergent Window
     ran=None
     if len(sys.argv)==1:
