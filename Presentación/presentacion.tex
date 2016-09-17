@@ -6,7 +6,9 @@
 \usepackage{tikz}
 \usecolortheme{albatross}
 \usefonttheme{professionalfonts}
-
+\AtBeginDocument{%
+  \renewcommand\figurename{Referencia}
+}
 \usepackage{caption}
 \usepackage{subcaption}
 \setbeamertemplate{navigation symbols}{}
@@ -88,5 +90,45 @@
 	\includegraphics[width=.5\textwidth]{output}
 	\end{figure}
 	\end{frame}
+	\section{Python}
+	\begin{frame}
+	\frametitle{Python}
+	\begin{figure}
+	\includegraphics[width=\textwidth]{python}
+	\caption{\tiny{\url{https://cdn.fedoramagazine.org/wp-content/uploads/2015/11/Python_logo.png}}}
+	\end{figure}
+	\end{frame}
+	\subsection{Numpy}
+	\begin{frame}
+	\frametitle{Numpy}
+	\begin{figure}
+	\includegraphics[width=.5\textwidth]{numpy}
+	\caption{\tiny{\url{https://bids.berkeley.edu/sites/default/files/styles/400x225/public/projects/numpy_project_page.jpg?itok=flrdydei}}}
+	\end{figure}
 	
+	\end{frame}			
+	\subsection{Matplotlib}
+	\begin{frame}
+	\frametitle{Matplotlib}
+	\begin{figure}
+	\includegraphics[width=\textwidth]{matplotlib}
+	\caption{\tiny{\url{https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/1280px-Matplotlib_logo.svg.png}}}
+	\end{figure}
+	\end{frame}
+	\section{MIFSA}
+	\subsection{Califa}
+	\begin{frame}
+	\frametitle{Calar Alto Legacy Integral Field spectroscopy Area survey}
+	\begin{figure}
+	\includegraphics[height=.75\textheight]{califa}
+	\caption{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/6/6e/CALIFA_HexDR2_mandala.png}}}
+	\end{figure}
+	\end{frame}
+	\begin{frame}
+	\frametitle{Map
+Integral Field Spectroscopy Analysis}
+\begin{figure}
+\includegraphics[width=\textwidth]{fullOutput}
+\end{figure}
+	\end{frame}
 \end{document}
