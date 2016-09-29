@@ -12,3 +12,4 @@ __pycache__
 LARIM/
 *.ps
 *.png
+!encabezado.png
