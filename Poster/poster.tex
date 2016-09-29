@@ -1,0 +1,67 @@
+\documentclass[a0,portrait]{a0poster}
+\special{papersize=91.44cm,121.92cm}
+\setlength{\paperwidth}{91.44cm}
+\setlength{\paperheight}{121.92cm}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize}
+\usepackage{color}
+\usepackage{multicol}
+\columnsep=100pt
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+\usepackage[percent]{overpic}
+\topskip0pt
+\usepackage[top=0.15in, bottom=0in, left=-0.5in, right=0in]{geometry}
+\begin{document}
+\begin{overpic}[width=92.54cm,height=8.26cm]{encabezado}
+\end{overpic}
+\vspace{3cm}
+
+\begin{changemargin}{3cm}{3cm} 
+\begin{center}
+{\fontsize{80}{80}\selectfont \textbf{\textcolor{blue}{PYTHON TOOL (MIFSA) FOR ANALYSIS OF
+INTEGRAL FIELD SPECTRA}}}
+\vspace{2cm}
+{\center \fontsize{60}{40}\selectfont \textbf{Jiménez-Cárdenas, Mario-A Higuera-G}}
+\vspace{2cm}
+{\center \fontsize{60}{40}\selectfont Physics Department, National University of Colombia; National Astronomical Observatory}
+\end{center}
+\vspace{2cm}
+\begin{multicols*}{3}
+
+\fbox{%
+    \parbox{\columnwidth}{
+\fontsize{40}{40} \selectfont \textbf{\textcolor{red}{Introduction}}\\ \\
+We developed the code named MIFSA (Map Integral Field Spectroscopy Analysis) in Python, which makes the extraction  of the data-cubes of
+the galaxies contained in the database CALIFA
+(Calar Alto Legacy Integral Field Spectroscopy Area
+Survey). The code allows to represent the image
+of the galaxy, calculating the total flux associated
+to each pixel, normalizing all fluxes and making
+a spectral colormap with the normalized values
+corresponding to each pixel.
+The program uses the library PyFits (from
+Astropy) to read datacubes, Tkinter for graphic
+interface, Matplotlib to show the galaxy and its
+spectra, and Numpy to work with arrays. Despite
+that there are some tools in some languages, MIFSA
+is a free Python alternative for the analysis of
+integral field spectra.
+In order to analize datacube’s information,
+MIFSA can extract and show the spectra associated
+to each pixel and identify its absortion and emission
+lines.
+ }%
+}
+\\ \\ \\ \\
+%==================================
+\fbox{%
+    \parbox{\columnwidth}{
+    	\fontsize{40}{40} \selectfont \textbf{\textcolor{red}{Aim}}\\ \\
+    	There are plenty of tools developed (or under development) that do the basics of an analysis integral field spectra. The most developed (PINGSOFT) was written in IDL, so is neccesary to buy the license to use it. Other ones are 
+    }
+}
+\end{multicols*}
+\end{changemargin}
+\end{document}
