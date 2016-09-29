@@ -14,3 +14,4 @@ LARIM/
 *.png
 !encabezado.png
 !poster.pdf
+*#
